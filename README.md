@@ -1,0 +1,2 @@
+# NewsPortal
+Portal for news
