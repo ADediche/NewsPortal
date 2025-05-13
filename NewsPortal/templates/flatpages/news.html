@@ -1,15 +1,2 @@
-    <p>текст из шаблона news!</p>
-    <br>
-    Далее текст из шаблона-родителя юзер:
-    {% extends "flatpages/user.html" %}
-    <br>
-        <h1>здесь пишется block cont</h1>
-    <br>        
-    {% block cont %}
-        а вот тут гоним всё что хотии включить в шаблон-родитель
-        <br>
-        выводим что-то с помощью flatpage.content
-        <br>
-        {{flatpage.content}}
-    {% endblock cont %}
+    {% extends "flatpages/default.html" %}
 

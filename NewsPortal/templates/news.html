@@ -1,0 +1,29 @@
+<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+<!-- Название у нас будет products -->
+{% block title %}
+Posts
+{% endblock title %}
+
+<!-- В контенте на странице мы выводим все товары -->
+{% block content %}
+    {% if posts %}
+        <h1>Все новости</h1>
+        <hr>
+        <table>
+            {% for post in posts %}
+            <tr>
+                <td><br>{{ post }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    {% elif post %}
+        {{ post.title|censor }} <br> <b>{{ post.create_time|date:'d M Y' }}</b> <br> {{ post.text|censor }}
+    {% else %}
+        <!-- Если товаров нет, говорим, что товаров нет ;) -->
+        <h2>Новостей нет!</h2>
+    {% endif %}
+{% endblock content %}
