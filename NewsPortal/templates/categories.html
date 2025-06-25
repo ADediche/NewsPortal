@@ -1,0 +1,17 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+{% load custom_tags %}
+
+
+{% block content %}
+    {% if categories %}
+        {% for category in categories %}
+            <br>
+            {{category.name}}
+            {% if category.name not in users_categories.values %}
+                <button> <a href={{category|address:category.id}}>Подписаться</a> </button>
+            {% endif %}
+        {% endfor %} 
+    {% endif %}
+{% endblock content %}

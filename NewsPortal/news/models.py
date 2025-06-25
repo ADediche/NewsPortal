@@ -26,10 +26,16 @@ class Author(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length = 40,
                             unique = True,
-                            null=False)
+                            null = False)
+    subscribers = models.ManyToManyField(User, through = 'UserCategory')
 
     def __str__(self):
-        return f'{self.name.title()}'
+        return f'{self.name}'
+
+
+class UserCategory(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 class Post(models.Model):
     news = 'NE'

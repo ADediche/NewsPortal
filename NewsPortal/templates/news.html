@@ -29,7 +29,7 @@ Posts
     {% elif post %}
         {{ post.title|censor }} <br> <b>{{ post.create_time|date:'d M Y' }}</b> <br> {{ post.text|censor }}
     {% else %}
-        <!-- Если товаров нет, говорим, что товаров нет ;) -->
+        <!-- Если новостей нет, говорим, что новостей нет ;) -->
         <h2>Новостей нет!</h2>
     {% endif %}
 

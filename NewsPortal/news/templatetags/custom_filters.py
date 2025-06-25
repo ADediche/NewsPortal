@@ -10,4 +10,9 @@ def censor(value):
         elif value.find('редиска'):
             return value.replace('редиска', 'р....')
     else:
-        return 'фильтр ensor не может быть применим к данному объекту'
+        return 'фильтр censor не может быть применим к данному объекту'
+
+@register.filter()
+def address(value, index):
+    address = "../subscrib/" + str(index)
+    return address

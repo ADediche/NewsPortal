@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.yandex',
+    'django_apscheduler',
 ]
 
 SITE_ID = 1
@@ -160,3 +161,11 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_FORMS = {'signup': 'authorisation.forms.BasicSignupForm'}
+
+# for sending emails
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'ODarkmanO'
+EMAIL_HOST_PASSWORD = 'imtbluqqwglewtzi'
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = 'ODarkmanO@yandex.ru'
